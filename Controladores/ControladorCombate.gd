@@ -181,6 +181,7 @@ func _lanzar_proyectil(
 	proyectil.global_position = origen
 	# Dos combates sin curación deben ser superables; la escala incluye el daño periódico.
 	if not es_turno_jugador:
+		proyectil.observado.connect(enemigo.observar_impacto)
 		proyectil.dano_base *= float(_datos["dano_ia"])
 		proyectil.dano_por_tick *= float(_datos["dano_ia"])
 	proyectil.configurar(velocidad, emisor)
@@ -269,23 +270,21 @@ func _iniciar_turno_ia() -> void:
 	await get_tree().create_timer(0.7, false).timeout
 	if _combate_finalizado or fase != Fase.COMBATE or secuencia != _secuencia or enemigo.vida_actual <= 0.0:
 		return
-	hud.actualizar_estado("El enemigo está reposicionándose...")
-	await enemigo.mover_en_turno(jugador.global_position)
-	if _combate_finalizado or fase != Fase.COMBATE or secuencia != _secuencia or enemigo.vida_actual <= 0.0:
+	var disponibles := gestor_ia.obtener_disponibles()
+	if disponibles.is_empty():
+		_recuperar_turno_jugador("La IA no tiene munición disponible.")
 		return
-	var municion_ia: Array[String] = gestor_ia.obtener_disponibles()
-	if municion_ia.is_empty():
-		push_error("La IA no tiene munición disponible para continuar el combate.")
-		_recuperar_turno_jugador("La IA no tiene munición disponible; continúa tu turno.")
-		return
-	var multiplicador := gestor_ia.obtener_multiplicador_potencia(municion_ia[0])
-	var velocidad := enemigo.calcular_disparo(
-		jugador.obtener_punto_impacto_global(),
-		multiplicador
-	)
+	var decision := enemigo.decidir(jugador, disponibles, _datos, indice_posicion)
+	if decision.desplazamiento != 0.0:
+		await enemigo.mover_en_turno(jugador.global_position, decision.desplazamiento)
+		if _combate_finalizado or fase != Fase.COMBATE or secuencia != _secuencia:
+			return
+		decision = enemigo.decidir(jugador, disponibles, _datos, indice_posicion, false)
+	var tipo: String = decision.tipo
+	var velocidad := enemigo.preparar_tiro(jugador, decision, _datos, gestor_ia.obtener_multiplicador_potencia(tipo))
 	var origen := enemigo.punto_disparo.global_position
 	hud.actualizar_turno("DISPARO DEL ENEMIGO EN VUELO", false)
-	if _lanzar_proyectil(origen, velocidad, enemigo, false, municion_ia[0], gestor_ia):
+	if _lanzar_proyectil(origen, velocidad, enemigo, false, tipo, gestor_ia):
 		hud.actualizar_estado("El enemigo ha disparado")
 
 

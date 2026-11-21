@@ -60,7 +60,12 @@ func _ready() -> void:
 	)
 	boton_municion_seleccionada.pressed.connect(_alternar_menu_municion)
 	for tipo in botones_municion:
-		botones_municion[tipo].pressed.connect(_seleccionar_municion.bind(tipo))
+		var boton: Button = botones_municion[tipo]
+		var fila: HBoxContainer = boton.get_node("Contenido")
+		fila.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		var nombre: Label = fila.get_node("Nombre")
+		nombre.text += "\n" + GestorProyectiles.descripcion_dano(tipo)
+		boton.pressed.connect(_seleccionar_municion.bind(tipo))
 
 
 func actualizar_estado(texto: String) -> void:

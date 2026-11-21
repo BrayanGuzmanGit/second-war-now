@@ -8,6 +8,7 @@ const ESCENA_ZONA_INCENDIADA: PackedScene = preload(
 const EFECTO_BOMBARDEO = preload("res://Scripts/Proyectiles/EfectoBombardeoTerreno.gd")
 const DURACION_EXCAVACION_BOMBARDEO := 0.9
 
+signal observado(punto: Vector2, cuerpo: Node2D)
 signal finalizado
 
 @export var dano_base: float = 25.0
@@ -75,6 +76,7 @@ func _physics_process(delta: float) -> void:
 		_dividirse()
 		return
 	if global_position.x < -100.0 or global_position.x > 1900.0 or global_position.y > 1100.0 or _tiempo_vuelo > 12.0:
+		observado.emit(global_position, null)
 		_finalizar()
 
 
@@ -186,6 +188,7 @@ func _resolver_impacto(cuerpo: Node2D, posicion_impacto: Vector2) -> void:
 		return
 	_impactado = true
 	set_physics_process(false)
+	observado.emit(posicion_impacto, cuerpo)
 	_impactar(cuerpo, posicion_impacto)
 
 
@@ -206,6 +209,7 @@ func _dividirse() -> void:
 		)
 		var angulo := angulo_central + deg_to_rad(proporcion * 38.0)
 		var fragmento := ESCENA_FRAGMENTO.instantiate() as FragmentoProyectil
+		fragmento.observado.connect(observado.emit)
 		fragmento.finalizado.connect(_al_finalizar_fragmento)
 		fragmento.terreno = terreno
 		fragmento.configurar(

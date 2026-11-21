@@ -500,7 +500,7 @@ func _probar_escena_de_combate() -> void:
 	for indice in range(290):
 		await physics_frame
 	_verificar(enemigo.vida_actual < enemigo.vida_maxima, "El proyectil del jugador debe impactar al enemigo.")
-	_verificar(jugador.vida_actual < jugador.vida_maxima, "La IA debe responder al disparo del jugador.")
+	_verificar(enemigo.impacto.is_finite(), "La IA debe completar y observar su tiro, incluso si falla.")
 	_verificar(
 		etiqueta_turno.text == "TU TURNO" and base_joystick.visible,
 		"El turno y el joystick deben regresar al jugador después del ataque de la IA."

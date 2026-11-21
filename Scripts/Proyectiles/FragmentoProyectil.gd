@@ -1,6 +1,7 @@
 extends Area2D
 class_name FragmentoProyectil
 
+signal observado(punto: Vector2, cuerpo: Node2D)
 signal finalizado
 
 @export var dano: float = 10.0
@@ -45,6 +46,7 @@ func _physics_process(delta: float) -> void:
 		_resolver_impacto(impacto["collider"], impacto["position"])
 		return
 	if _tiempo_vuelo >= vida_en_segundos or global_position.y > 1100.0:
+		observado.emit(global_position, null)
 		_finalizar()
 
 
@@ -57,6 +59,7 @@ func _resolver_impacto(cuerpo: Node2D, posicion_impacto: Vector2) -> void:
 		return
 	# Bloquea ambas rutas de colisión antes de publicar daño o sonido.
 	_finalizado = true
+	observado.emit(posicion_impacto, cuerpo)
 	var audio := get_node("/root/GestorAudioPartida")
 	var material := CatalogoSonidos.material(cuerpo, audio.superficie)
 	audio.evento("impacto", posicion_impacto, "dispersion", material)

@@ -26,9 +26,14 @@ func _ejecutar_pruebas() -> void:
 func _jugar_mision(id_mision: String) -> void:
 	var c: Node = await _abrir_mision(id_mision)
 	var disparos := 0
+	seed(1942)
 	var limite := Time.get_ticks_msec() + 150000
 	while c.fase != c.Fase.RESULTADO and Time.get_ticks_msec() < limite:
 		if c.fase == c.Fase.COMBATE and c.get("_turno_jugador") and not c.get("_proyectil_en_vuelo") and c.jugador.turno_activo:
+			if c.enemigo.global_position.x - c.jugador.global_position.x > 640 and c.jugador.combustible_actual > 1.0:
+				Input.action_press("Derecha")
+				await physics_frame
+				continue
 			Input.action_release("Derecha")
 			var solucion := _buscar_tiro(c)
 			c.call("_seleccionar_municion", solucion["tipo"])

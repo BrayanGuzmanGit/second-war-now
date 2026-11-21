@@ -18,6 +18,18 @@ const MULTIPLICADORES_POTENCIA: Dictionary = {
 
 var _proyectiles_usados: Array[String] = []
 
+static func descripcion_dano(tipo: String) -> String:
+	# Leer la configuración de la escena sin lanzar el proyectil ni consumir munición.
+	var proyectil: Proyectil = ESCENAS_PROYECTILES[tipo].instantiate()
+	var base := String.num(proyectil.dano_base)
+	var texto := "%s de daño" % base
+	if proyectil.cantidad_fragmentos > 0:
+		texto = "%d × %s de daño" % [proyectil.cantidad_fragmentos, String.num(proyectil.dano_base / proyectil.cantidad_fragmentos)]
+	elif proyectil.cantidad_ticks > 0:
+		texto = "%s + %d × %s de fuego" % [base, proyectil.cantidad_ticks, String.num(proyectil.dano_por_tick)]
+	proyectil.free()
+	return texto
+
 
 func crear_proyectil(tipo: String) -> Proyectil:
 	if not ESCENAS_PROYECTILES.has(tipo):

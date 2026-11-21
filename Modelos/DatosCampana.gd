@@ -5,6 +5,7 @@ class_name DatosCampana
 ## Las coordenadas de aparición son del cuerpo del tanque, antes de asentarse en el suelo.
 static var ESCENARIOS: Dictionary = {
 	"francia": {
+		"margen_cascos": 1.0, "arcos": [35, 52], "priorizar_remate_final": false,
 		"jugador": Vector2(360, 720),
 		"posiciones": [Vector2(1300, 720)],
 		"activacion": 0.0,
@@ -16,6 +17,7 @@ static var ESCENARIOS: Dictionary = {
 		"ruinas": [],
 	},
 	"alamein": {
+		"margen_cascos": 0.75, "arcos": [35, 52, 64], "priorizar_remate_final": false,
 		"jugador": Vector2(260, 720),
 		"posiciones": [Vector2(850, 650), Vector2(1480, 720)],
 		"activacion": 970.0,
@@ -30,6 +32,7 @@ static var ESCENARIOS: Dictionary = {
 		"ruinas": [],
 	},
 	"berlin": {
+		"margen_cascos": 0.5, "arcos": [35, 50, 62], "priorizar_remate_final": true,
 		"jugador": Vector2(260, 720),
 		"posiciones": [Vector2(850, 710), Vector2(1480, 710)],
 		"activacion": 970.0,

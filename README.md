@@ -12,6 +12,9 @@ Para entregar el juego a alguien que no usa Godot, instalar las plantillas de ex
 
 ## Campaña
 
+Cada defensa recuerda el último tiro. Si permaneces en el mismo sitio, el enemigo ajusta la puntería. Si cambias de posición, pierde parte de esa referencia. Observa su cañón cuando te cubras: puede probar un arco más alto, moverse si mejora el tiro o emplear munición de área. Cada enemigo comparte las reglas del ciclo de cinco proyectiles del jugador.
+
+
 El resultado de cada misión presenta un informe en pergamino con el escenario, monedas desglosadas y saldo. **Hechos y significado** explica el episodio y sus consecuencias; **Para recordar** ofrece cronología, pregunta con explicación y fuentes. Detalles en [resultados educativos](docs/resultados-mision.md).
 
 Las partidas incluyen motor, cadenas por superficie, engranajes del cañón, impactos y avisos. **Menú / Pausa**, Escape o F8 detienen la misión y permiten continuar, ajustar Efectos/Avisos/Videos o abandonar con confirmación. Las preferencias persisten. Detalles en [menú de pausa](docs/menu-pausa.md) y [audio de partidas](docs/audio-partidas.md).
