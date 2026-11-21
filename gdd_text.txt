@@ -1,0 +1,905 @@
+=== PAGE 1 ===
+1
+Second War Now
+Versión 1.0
+Manuel Estupiñan - Brayan Guzmán - Kevin Monsalve
+6L
+
+=== PAGE 2 ===
+2
+Índice
+Introducción...............................................................................................................3
+Descripción breve del concepto.............................................................................3
+Descripción breve de la historia y personajes........................................................3
+Propósito, público objetivo y plataforma.................................................................4
+Monetización..............................................................................................................5
+Tablas de productos y precios................................................................................5
+Difusión..............................................................................................................................7
+Costos, presupuesto y licencias.........................................................................................8
+Planificación...............................................................................................................8
+El equipo humano.................................................................................................. 8
+Estimación temporal del desarrollo........................................................................9
+Descripción detallada del concepto de juego.........................................................9
+Descripción detallada de las mecánicas de juego............................................... 10
+Controles..............................................................................................................11
+Misiones................................................................................................................11
+Objetos.................................................................................................................18
+Trasfondo................................................................................................................. 19
+Descripción detallada de la historia y la trama.....................................................19
+Entornos y lugares............................................................................................... 20
+Arte............................................................................................................................21
+Estética general del juego....................................................................................21
+Música..................................................................................................................21
+Efectos de sonido.............................................................................................................22
+Requerimientos....................................................................................................................23
+Requerimientos funcionales.............................................................................................23
+Requerimientos no funcionales........................................................................................25
+Diagramas UML....................................................................................................................27
+Diagramas de casos de uso.............................................................................................27
+Descripción casos de uso................................................................................................27
+Diagrama de clases..........................................................................................................34
+Diagramas de secuencia..................................................................................................34
+
+=== PAGE 3 ===
+3
+Introducción
+Descripción breve del concepto
+Second War Now es un juego de estrategia y disparos en 2D por turnos que
+combina la mecánica del cálculo de trayectoria de Angry Birds con los combates
+tácticos de tanques al estilo Tank Stars. Ambientado en la Segunda Guerra Mundial,
+el juego desafía a los jugadores a ajustar el ángulo y la potencia de sus disparos
+mediante físicas de tiro parabólico para destruir unidades y estructuras enemigas. A
+través de una serie de misiones inspiradas en batallas reales, el proyecto ofrece una
+experiencia entretenida que enseña principios clave de física y eventos relevantes
+de la historia.
+Descripción breve de la historia y personajes
+La narrativa de Second War Now inicia en septiembre de 1939 con el detonante de
+la Segunda Guerra Mundial: la invasión alemana a Polonia. El arco narrativo lleva al
+jugador a través de una campaña lineal basada en los sucesos más críticos del
+conflicto. El jugador asume el rol de un comandante en el frente de batalla, las
+primeras misiones sitúan al jugador en batallas desesperadas por intentar frenar el
+rápido avance de las fuerzas del Eje en Europa Continental. El objetivo es resistir
+posiciones clave y exterminar a las unidades enemigas que intentan avanzar. A
+medida que la guerra escala a nivel global, las misiones recrean de forma interactiva
+enfrentamientos emblemáticos de la realidad histórica:
+● La batalla de Francia (10 de mayo - 25 de junio de 1940).
+● La Segunda Batalla de Alamein (23 de octubre - 11 de noviembre de 1942).
+● La Batalla de Berlín (16 de abril - 2 de mayo de 1945).
+Cada misión se introduce con una breve ficha histórica (contexto, fecha y ubicación
+real) para dar propósito educativo a los objetivos de disparo y la ambientación del
+mapa.
+Dado que la experiencia de juego está centrada en la perspectiva del vehículo y la
+resolución táctica por turnos, solo existe un personaje individual:
+1. Comandante: Es la representación del jugador y el tripulante de un vehículo
+blindado con el objetivo de eliminar a los tanques enemigos, el jugador es el
+héroe de su propio vehículo.
+La interacción narrativa ocurre a través de las dos grandes facciones del conflicto:
+2. Las potencias Aliadas: Este es el bando del jugador durante la campaña y
+representa a la gran coalición mundial y cuyos principales miembros fueron:
+○ Gran Bretaña (y el Imperio Británico, que incluyó a Canadá, Australia,
+Nueva Zelanda y la India).
+○ Francia (las fuerzas de la Francia Libre tras la ocupación alemana).
+○ Unión Soviética (se unió en 1941 tras ser invadida por Alemania).
+○ Estados Unidos (entró en el conflicto a finales de 1941 tras el ataque
+a Pearl Harbor).
+
+=== PAGE 4 ===
+4
+3. Las potencias del Eje: Son las fuerzas enemigas controladas por la
+inteligencia artificial del juego y representa a la coalición que inició los
+ataques expansionistas y se enfrentó a los Aliados y sus principales
+miembros fueron:
+○ Alemania (liderada por Adolf Hitler).
+○ Italia (liderada por Benito Mussolini).
+○ Japón (liderado por el emperador Hirohito).
+Propósito, público objetivo y plataforma
+El proyecto tiene 3 propósitos principales:
+- Educativo: Se busca enseñar al jugador desde dos puntos principales:
+Historia: Enseñar de forma interactiva sobre eventos relevantes y batallas
+clave de la Segunda Guerra Mundial mediante la recreación temática de
+misiones basadas en escenarios reales.
+Física: Promover la comprensión intuitiva de la cinemática y el tiro parabólico
+(ángulo, gravedad y potencia de tiro), obligando al jugador a calcular sus
+disparos de forma estratégica.
+- Técnico: Servir como proyecto académico universitario en la materia de
+desarrollo de videojuegos, para aprender y poner a prueba los fundamentos
+del motor de desarrollo Godot Engine 4 (manejo de nodos 2D, motor de física
+integrado, señales y UI).
+- Entretenimiento: Ofrecer una experiencia jugable rápida, intuitiva y
+entretenida en 2D basada en mecánicas clásicas de artillería por turnos.
+El juego está pensado para estudiantes de secundaria, universitarios y jóvenes
+adultos (entre 12 y 25+ años) con interés en la historia militar, la ciencia o los juegos
+de estrategia/casuales, que buscan juegos de partidas rápidas y mecánicas fáciles
+de entender pero con cierto margen de estrategia (cálculo de trayectoria y selección
+de munición) y que disfrutan de los retos de precisión, la resolución de niveles
+tácticos y el aprendizaje de datos históricos y/o curiosidades sin necesidad de
+memorizar textos extensos.
+La plataforma para la cual será desarrollada será PC o computadoras portátiles con
+sistema operativo Windows 10 / 11 de (64-bits) con sistemas de control operados
+por teclado y ratón. Se desarrollará con el motor de videojuegos Godot Engine
+(Versión 4.7.2, en 2D); los motivos de la elección de este motor sobre otros son que
+es ligero, de código abierto, y su sistema de nodos 2D junto con GDScript ofrece
+una curva de aprendizaje óptima para un primer proyecto, facilita las pruebas de
+compilación directa, el control preciso con ratón para el tiro parabólico y esto
+sumado a la petición dada por el docente.
+
+=== PAGE 5 ===
+5
+Monetización
+Es importante resaltar que al tratarse de un proyecto universitario de carácter
+educativo, las compras en el interior del juego se harán de manera simulada y no
+reflejan el uso de dinero real.
+El videojuego adoptará un modelo gratuito con compras integradas (Free-to-Play)
+centrado únicamente en la venta de diferentes modelos de tanques históricos. La
+campaña principal, las misiones y la historia completa son 100% gratuitas para
+todos los jugadores. Esto asegura que cualquier persona pueda jugar el juego
+completamente sin tener que pagar un solo peso para avanzar.
+La estrategia de ingresos se basa en el coleccionismo y la personalización sobre los
+tanques de guerra. Los jugadores que deseen cambiar la apariencia de su vehículo
+podrán comprar modelos de tanques reales que combatieron durante la Segunda
+Guerra Mundial.
+Tablas de productos y precios
+Código Nombre Bando / Precio
+del País Sugerido
+Tanque
+TNQ-01 M4 Estados Gratis
+Sherman Unidos
+TNQ-02 Cromwell Gran $3
+Mk VIII Bretaña
+TNQ-03 T-34-85 Unión $7
+Soviética
+TNQ-04 Churchill Gran $6
+Mk IV Bretaña
+
+=== PAGE 6 ===
+6
+TNQ-06 KV-2 Unión $9
+Soviética
+Imagen de referencia de como quedan los tanques
+
+=== PAGE 7 ===
+7
+Difusión
+Con el objetivo de que el juego logre alcanzar nuevos jugadores y tenga un buen
+recibimiento en el público objetivo de niños y jóvenes adultos, se planea difundirlo por medio
+
+=== PAGE 8 ===
+8
+de redes sociales como lo son Facebook, Instagram y Tik tok. También al ser un proyecto
+para nuestra universidad, lo podemos difundir en el interior de la misma para que nuestros
+compañeros puedan probar y disfrutar del videojuego.
+Costos, presupuesto y licencias
+Al ser un proyecto educativo universitario, no se tienen contemplado gastos de dinero ni un
+presupuesto, pues todo el catálogo de herramientas que se utilizarán en el desarrollo serán
+gratuitas, las herramientas que se usarán en este proyecto serán:
+- Godot como motor de videojuegos.
+- Github para el control de versiones y copias de seguridad.
+- GIMP para apoyo de diseño.
+- Astha para los diagramas UML (Esta herramienta es de pago pero la universidad
+nos proporciona la licencia).
+- Google gemini, Chat GPT y Claude en sus versiones gratuitas para el desarrollo de
+las imágenes del juego.
+- Audacity para edición de audio y efectos de sonido.
+Planificación
+El equipo humano
+Para la ejecución completa del videojuego se contemplan los siguientes roles
+funcionales. En el contexto de este proyecto universitario, estos roles son asumidos
+por los 3 estudiantes que conforman el equipo de desarrollo:
+- Diseñador del juego y guionista: Responsable del documento de diseño
+(GDD), balanceo de la física (fuerza, ángulos, daño de munición) y
+adaptación de los datos históricos a las misiones.
+- Programador: Encargado de la lógica del juego, sistema de turnos, IA
+enemiga, gestión de escenas e interfaz de usuario (UI), etc.
+- Diseñador 2D: Encargado del arte de los tanques, fondos de los escenarios
+históricos, elementos de los mapas, efectos visuales (de explosiones y
+estelas de disparo) y la interfaz gráfica.
+- Diseñador de audio: Responsable de la integración de efectos de sonido
+(disparos, explosiones, motores) y música ambiental de época o tensión
+bélica.
+- QA tester: Encargado de realizar pruebas de juego (control de calidad) para
+detectar errores de físicas, colisiones en terrenos 2D y desbalanceos de
+dificultad.
+Se hará uso de la herramienta Github como controlador de versiones y para alojar
+en el repositorio las copias de seguridad del progreso del proyecto.
+Las herramientas especializadas para la creación gráfica en parte serán apoyadas y
+creadas con la IA y se harán ajustes por medio de GIMP que es una herramienta
+parecida a photoshop pero gratuita.
+
+=== PAGE 9 ===
+9
+Estimación temporal del desarrollo
+El desarrollo se planifica para un periodo estimado de 3 meses (12 semanas) que es
+la duración del semestre académico.
+Descripción detallada del concepto de juego
+Second War Now es un videojuego de estrategia y disparos en 2D por turnos,
+ambientado en el contexto de la Segunda Guerra Mundial. El juego combina la
+mecánica de cálculo de trayectoria característica de Angry Birds con un sistema de
+combate táctico entre vehículos blindados inspirado en juegos como Tank Stars. Su
+propuesta principal consiste en que el jugador debe utilizar sus conocimientos de
+trayectoria, ángulo y potencia para realizar disparos estratégicos y superar los
+diferentes escenarios de combate.
+El concepto del juego parte de la intención de presentar algunos de los
+acontecimientos más importantes de la Segunda Guerra Mundial desde la
+perspectiva de las fuerzas Aliadas. El jugador asumirá el papel de un comandante
+que participa en diferentes escenarios inspirados en batallas reales, recorriendo una
+campaña que representa distintas etapas del conflicto, desde sus primeros años
+hasta su etapa final en Europa.
+Uno de los principales objetivos de Second War Now es integrar el entretenimiento
+con un componente educativo. Por esta razón, las misiones estarán inspiradas en
+acontecimientos históricos reales y estarán acompañadas por información
+relacionada con el contexto de cada batalla. El jugador podrá conocer aspectos
+como la fecha, ubicación, participantes y relevancia histórica de los acontecimientos
+representados, permitiendo que la experiencia del juego sirva también como una
+aproximación a algunos hechos importantes de la Segunda Guerra Mundial.
+El juego estará estructurado mediante una campaña compuesta por diferentes
+misiones inspiradas en acontecimientos y batallas reales de la Segunda Guerra
+Mundial. Cada misión representará un momento determinado del conflicto y contará
+con un escenario relacionado con su contexto histórico. Antes de comenzar, el
+jugador podrá consultar una breve ficha informativa con datos como la fecha,
+ubicación, participantes y relevancia histórica de la batalla. De esta manera, los
+acontecimientos históricos servirán como contexto para las situaciones que el
+jugador encontrará durante la partida.
+El componente educativo también estará relacionado con la física, ya que el
+concepto del juego busca acercar al jugador a principios básicos del movimiento de
+proyectiles. De esta manera, Second War Now pretende conectar los contenidos
+académicos con una experiencia interactiva, haciendo que conceptos de física e
+historia formen parte del contexto general del videojuego.
+
+=== PAGE 10 ===
+10
+La campaña estará organizada cronológicamente para representar la evolución del
+conflicto. Se tomarán como referencia tres enfrentamientos principales: la Batalla de
+Francia, como representación de la etapa inicial; la Segunda Batalla de El Alamein,
+como uno de los acontecimientos importantes de la etapa intermedia; y la Batalla de
+Berlín, como representación de la etapa final de la guerra en Europa. Estas batallas
+permitirán mostrar diferentes escenarios y contextos históricos a medida que avanza
+la campaña.
+En conjunto, Second War Now busca ofrecer una experiencia que combine
+entretenimiento, estrategia, física e historia, utilizando una mecánica de juego
+sencilla de comprender pero que requiere precisión y planificación para dominarla.
+El objetivo es que el jugador no solo avance en una campaña de combates, sino
+que también pueda aprender conceptos básicos de física y conocer acontecimientos
+relevantes de la Segunda Guerra Mundial mientras juega.
+Descripción detallada de las mecánicas de juego
+En cada turno, el jugador controla un vehículo blindado perteneciente al bando de
+los Aliados y debe enfrentarse a unidades controladas por la inteligencia artificial
+que representan a las Potencias del Eje. Antes de realizar un disparo, el jugador
+podrá mover su vehículo de acuerdo a una barra de combustible limitada que se
+recarga en cada turno, podrá seleccionar el tipo de proyectil que desea usar (cada
+uno con características de daño y alcance diferentes) y deberá seleccionar el ángulo
+y la potencia con la que será lanzado el proyectil, retroalimentado de manera que
+cuando falla el disparo o no genera el daño deseado es porque debe ajustar los
+aspectos como el ángulo, la posición del tanque, la fuerza o cambiar de proyectil. La
+trayectoria dependerá de estas variables, por lo que será necesario calcular el
+recorrido del disparo para alcanzar correctamente el objetivo. Esto permite
+incorporar de manera práctica conceptos relacionados con el movimiento parabólico
+y la física de proyectiles.
+El sistema de combate será por turnos, de modo que después de que el jugador
+realice su acción, la inteligencia artificial tendrá la oportunidad de responder. Esto
+permitirá que cada enfrentamiento se desarrolle como un pequeño desafío
+estratégico en el que el jugador deberá decidir cuándo atacar, qué objetivo priorizar
+y cómo aprovechar sus recursos disponibles. La cantidad de disparos o unidades
+disponibles podrá variar dependiendo de la misión, aumentando progresivamente el
+nivel de dificultad.
+La dificultad aumentará progresivamente a medida que el jugador avance en la
+campaña. La primera misión tendrá escenario sencillo para familiarizar al jugador
+con el sistema de disparo, mientras que las siguientes incorporarán mayores
+distancias, obstáculos, diferentes alturas, estructuras y objetivos que requerirán una
+planificación más cuidadosa. De esta forma, el jugador tendrá que mejorar tanto su
+
+=== PAGE 11 ===
+11
+habilidad para calcular los disparos como su capacidad para tomar decisiones
+estratégicas.
+Controles
+El esquema de control de Second War Now está diseñado exclusivamente para PC
+(con SO Windows) mediante la combinación de Teclado y Ratón (Mouse).
+Dispositivo Entrada / Acción en Descripción Mecánica
+Tecla el Juego
+Teclado TeclaA / Mover a la Desplaza el tanque hacia la
+Tecla < Izquierda izquierda sobre la superficie
+del terreno para buscar
+mejor cobertura o elevación.
+Teclado Tecla D / Mover a la Desplaza el tanque hacia la
+Tecla > Derecha derecha dentro del límite de
+movimiento permitido por
+turno.
+Ratón Movimiento Apuntado La posición del cursor
+del Cursor (Ángulo y respecto al tanque define en
+Potencia) tiempo real el ángulo del
+cañón y la distancia/fuerza
+del disparo.
+Ratón Clic Selección Le permite al jugador
+Izquierdo de munición seleccionar el tipo de
+y disparo munición a disparar y
+realizar el disparo del
+proyectil.
+Misiones
+Misión: Batalla de Francia
+
+=== PAGE 12 ===
+12
+Fecha: 10 de mayo – 25 de junio de 1940
+Etapa: Inicio de la guerra
+Bando del jugador: Aliados
+Ejército aliados: Cuenta con 3.700.000 tropas, 14000 cañones, 3000 aeronaves y
+2700 tanques.
+Ejército alemán: Cuenta con 2.800.000 tropas, 7500 cañones, 4000 aeronaves y
+3700 tanques.
+Alemania lanza la operación “caso amarillo”, cruzan la frontera e irrumpen paises
+bajos.
+Lugar: Puerto Dunkerque
+La misión comienza durante la ofensiva alemana sobre Francia y los Países Bajos.
+El jugador forma parte de las fuerzas aliadas que intentan contener el avance
+enemigo.
+Escenario: El escenario representa una zona rural francesa cercana a una
+población, con caminos, campos, pequeñas edificaciones, árboles, barreras y
+posiciones defensivas. La intención es transmitir que las fuerzas aliadas están
+intentando mantener una posición mientras el frente se desplaza rápidamente.
+La misión no busca representar toda la Batalla de Francia, sino un pequeño episodio
+ficticio inspirado en las condiciones reales del conflicto.
+¿De qué trata la misión?
+El jugador comienza en una posición defensiva y recibe la orden de mantener el
+control de la zona durante el enfrentamiento y permitir que las fuerzas aliadas
+puedan evacuar de manera exitosa.
+Objetivo principal: Llegar a la zona de evacuación(Dunkerque)
+Inicio 1: Posición defensiva
+Es donde comienza el jugador.
+Aquí se muestran cosas como:
+● Tanque del jugador
+● Pocos soldados aliados
+● Algunas estructuras
+● Unidades enemigas.
+El objetivo inicial es mantener la posición mientras aparecen las primeras unidades
+enemigas.
+Mensaje: “Mayo de 1940.Las fuerzas alemanas han roto las líneas defensivas. Las
+tropas aliadas comienzan a replegarse hacia la costa.”
+Avance 1: Zona cercana a la costa
+Después de superar la primera parte del escenario, el jugador avanza hacia una
+segunda posición.
+
+=== PAGE 13 ===
+13
+Aquí el escenario puede presentar más obstáculos y una distribución diferente de
+las unidades.
+Aquí se muestran cosas como:
+● Posiciones abandonadas.
+● Soldados desplazándose.
+● Vehículos aliados fuera de posición.
+● Estructuras dañadas de forma no gráfica.
+Mensaje: "Las defensas aliadas no han conseguido detener el avance. La retirada
+continúa. Las fuerzas aliadas se concentran cerca de Dunkerque."
+Avance 2: Punto de evacuación
+Al final del se encuentra el punto desde donde las fuerzas aliadas pueden retirarse.
+El objetivo ya no es mantener una posición, sino conseguir llegar al punto de
+evacuación.
+¿Cómo se gana?
+La misión se completa cuando el jugador:
+● Mantiene la posición inicial durante el enfrentamiento.
+● Consigue atravesar la zona defensiva.
+● Llega al punto de retirada.
+● Mantiene al menos un poco de vida en su tanque hasta alcanzar el objetivo
+final.
+Al final aparece:
+MISIÓN COMPLETADA
+Has conseguido mantener la posición y permitir la retirada de las fuerzas aliadas.”
+Después se mostraría la información histórica sobre la Batalla de Francia.
+¿Cómo se pierde?
+La misión termina si:
+● El tanque del jugador queda sin vida y muere.
+Al final aparece:
+“MISIÓN FALLIDA
+Las fuerzas aliadas no consiguieron mantener la posición y completar la retirada.”
+Aunque el jugador parece que está avanzando realmente se está retirando, ya que
+históricamente, esta batalla termina con una evacuación del ejército francés y los
+aliados en Dunkerque.
+En el escenario habrá una cantidad reducida de soldados NPC, cuya función será
+principalmente aportar ambientación y representar la presencia de tropas en el
+campo de batalla. No serán el elemento principal del combate.
+Los NPC pueden tener comportamientos muy sencillos:
+
+=== PAGE 14 ===
+14
+Algunos permanecen cerca de las posiciones aliadas.
+Otros se desplazan entre diferentes puntos del escenario.
+Pueden realizar pequeñas acciones de apoyo.
+Su participación en el enfrentamiento será secundaria.
+Tendrán una representación visual sencilla para no quitar protagonismo a los
+vehículos.
+Misión: La Segunda Batalla de Alamein
+Fecha: 23 de octubre – 11 de noviembre de 1942
+Etapa: Mitad de la guerra
+Bando del jugador: Aliados
+Ejército del jugador: Octavo Ejército británico
+Ejército enemigo: Fuerzas del Eje, principalmente fuerzas alemanas e italianas
+La misión representa la ofensiva del Octavo Ejército británico contra las fuerzas del
+Eje posicionadas cerca de El Alamein, Egipto. Después de los primeros combates,
+las fuerzas aliadas consiguen romper progresivamente las posiciones del Eje y
+obligarlas a retirarse hacia el oeste.
+Lugar: El Alamein(Desierto), Egipto
+La Segunda Batalla de El Alamein fue una importante victoria de las fuerzas aliadas
+frente a las fuerzas alemanas e italianas en el norte de África. La victoria permitió a
+los Aliados recuperar la iniciativa en este frente y obligó a las fuerzas del Eje a
+retirarse hacia el oeste.
+A diferencia de la primera misión, en esta ocasión el jugador está avanzando, ya
+que históricamente las fuerzas aliadas estaban realizando una ofensiva.
+Escenario:
+El escenario representa una zona desértica cercana a El Alamein, con grandes
+extensiones de arena, caminos, posiciones defensivas, obstáculos y fortificaciones.
+La intención es transmitir las condiciones del frente del norte de África, donde las
+fuerzas aliadas tuvieron que enfrentarse a posiciones defensivas del Eje en un
+terreno principalmente desértico.
+La misión no busca representar toda la Segunda Batalla de El Alamein, sino un
+episodio ficticio inspirado en la ofensiva aliada y el posterior repliegue de las fuerzas
+del Eje.
+¿De qué trata la misión?
+A diferencia de la primera misión, el objetivo ahora es avanzar por el territorio y
+romper las posiciones defensivas enemigas.
+El jugador debe conseguir abrirse camino a través del escenario hasta alcanzar el
+punto final de la misión.
+Inicio 1: Posición de ataque
+
+=== PAGE 15 ===
+15
+Es donde comienza el jugador.
+Aquí se muestran cosas como:
+● Tanque del jugador.
+● Pocos soldados aliados.
+● Algunas posiciones y estructuras defensivas.
+● Tanques y unidades enemigas.
+● Obstáculos propios del terreno desértico.
+El jugador comienza frente a las primeras posiciones enemigas.
+Mensaje:
+“23 de octubre de 1942. Las fuerzas aliadas comienzan su ofensiva en El Alamein.
+El Octavo Ejército británico avanza contra las posiciones de las fuerzas del Eje.”
+El objetivo inicial es superar las primeras posiciones defensivas y abrir un camino
+para continuar el avance.
+Avance 1: Retirada del Eje
+Esta sería la parte final del nivel.
+El jugador continúa avanzando mientras las fuerzas enemigas abandonan sus
+posiciones.
+Aquí se haría una mención muy importante, el cómo Hitler pidió aguantar a toda
+costa pero Erwin Rommel ordenó retirarse.
+“Noviembre de 1942. Ante el avance aliado, Erwin Rommel ordena la retirada de sus
+fuerzas. La resistencia del Eje comienza a colapsar.”
+Históricamente, Rommel terminó ordenando la retirada de sus fuerzas durante la
+batalla, pese a la orden de Hitler de mantener la posición. El repliegue permitió a las
+fuerzas del Eje evitar una destrucción completa y continuar la campaña hacia el
+oeste.
+Objetivo principal
+Avanzar a través de las posiciones del Eje y alcanzar el punto final del escenario.
+A diferencia de la primera misión, aquí el jugador sí está avanzando militarmente, ya
+que la misión representa una ofensiva aliada.
+¿Cómo se gana?
+La misión se completa cuando el jugador:
+● Supera las primeras posiciones defensivas.
+● Consigue atravesar la principal línea defensiva del Eje.
+● Avanza hasta la zona final del escenario.
+● Mantiene su tanque operativo(con vida) hasta alcanzar el objetivo.
+Al final aparece:
+
+=== PAGE 16 ===
+16
+MISIÓN COMPLETADA
+“La ofensiva aliada ha conseguido romper las posiciones del Eje en El Alamein.”
+Después se muestra la información histórica de la batalla.
+¿Cómo se pierde?
+La misión termina si:
+● El vehículo del jugador queda inutilizado.
+● El jugador pierde antes de alcanzar el objetivo final.
+Al final aparece:
+MISIÓN FALLIDA
+“Las fuerzas aliadas no consiguieron romper las posiciones del Eje.”
+Misión: La Batalla de Berlín
+Fecha: 16 de abril - 2 de mayo de 1945.
+Etapa: Final de la guerra
+Bando del jugador: Aliados
+Ejército del jugador: Ejército Rojo de la Unión Soviética
+Ejército enemigo: Alemania nazi
+La misión representa la ofensiva final de las fuerzas soviéticas sobre Berlín, capital
+de la Alemania nazi. Después de años de guerra, las fuerzas aliadas habían
+conseguido avanzar hasta territorio alemán y la Unión Soviética inició la ofensiva
+sobre Berlín en abril de 1945.
+Lugar: Berlín, Alemania(ciudad).
+La Batalla de Berlín fue uno de los últimos grandes enfrentamientos de la Segunda
+Guerra Mundial en Europa. Las fuerzas soviéticas avanzaron sobre la ciudad y
+combatieron contra las fuerzas alemanas que intentaban defender la capital. La
+batalla terminó el 2 de mayo de 1945 con la rendición de las fuerzas alemanas que
+defendían Berlín.
+Escenario:
+El escenario representa una zona urbana de Berlín durante los últimos días de la
+batalla, con calles, edificios, barricadas, estructuras defensivas y vehículos
+abandonados.
+La misión no busca representar toda la Batalla de Berlín, sino un episodio o
+representación un poco ficticio inspirado en el avance de las fuerzas soviéticas
+hacia el centro de la ciudad.
+¿De qué trata la misión?
+El jugador debe avanzar por las calles de Berlín y superar las posiciones defensivas
+alemanas hasta alcanzar el objetivo final de la campaña.
+A diferencia de las dos misiones anteriores, esta será la misión de mayor dificultad,
+ya que el jugador tendrá que enfrentarse a un escenario urbano con mayor cantidad
+de obstáculos y posiciones defensivas.
+
+=== PAGE 17 ===
+17
+Inicio 1: Entrada a Berlín
+Es donde comienza el jugador, el jugador busca avanzar por las calles de Berlín.
+Aquí se muestran cosas como:
+● Tanque del jugador.
+● Pocos soldados soviéticos.
+● Edificios y calles.
+● Barricadas.
+● Posiciones defensivas alemanas.
+● Tanques y unidades enemigas.
+● Vehículos abandonados.
+El jugador comienza en las afueras de la zona urbana y debe avanzar hacia las
+primeras posiciones alemanas.
+Mensaje:
+“Las fuerzas aliadas han conseguido entrar en Berlín. La resistencia alemana
+continúa dentro de la ciudad mientras el Ejército Rojo avanza hacia el centro.”
+En esta parte del nivel se busca representar que el combate ya no ocurre en un
+espacio abierto como en El Alamein, sino dentro de una ciudad.
+Avance 1: El centro de Berlín y la caida de berlin
+El jugador consigue atravesar las zonas exteriores de la ciudad y se aproxima al
+centro.
+Las defensas alemanas comienzan a ser más fuertes y el escenario presenta una
+mayor concentración de obstáculos.
+Aquí se muestran:
+● Edificios parcialmente abandonados.
+● Barricadas.
+● Posiciones defensivas.
+● Tanques alemanes.
+● Restos de vehículos.
+● Unos pocos soldados desplazándose por el escenario.
+Mensaje:
+“A finales de abril de 1945, las fuerzas soviéticas se acercan al centro de Berlín. La
+defensa alemana se encuentra cada vez más debilitada.”
+El jugador debe superar esta última línea defensiva para llegar al objetivo final.
+Objetivo principal
+Avanzar por Berlín, superar las posiciones defensivas alemanas y alcanzar el
+objetivo final del escenario.
+
+=== PAGE 18 ===
+18
+Esta será la misión que cierre la campaña y representa el avance final de las
+fuerzas aliadas en Europa.
+¿Cómo se gana?
+La misión se completa cuando el jugador:
+● Supera las posiciones defensivas de la entrada de Berlín.
+● Consigue avanzar por la zona urbana.
+● Atraviesa las últimas posiciones defensivas.
+● Llega al objetivo final del escenario.
+● Mantiene su tanque operativo hasta completar la misión.
+Al final aparece:
+MISIÓN COMPLETADA
+“2 de mayo de 1945. Las fuerzas alemanas que defendían Berlín se rinden. La
+batalla por la capital alemana ha terminado.”
+Después se muestra la información histórica de la batalla y el cierre de la campaña.
+¿Cómo se pierde?
+La misión termina si:
+● El vehículo del jugador queda inutilizado.
+● El jugador pierde antes de alcanzar el objetivo final.
+Al final aparece:
+MISIÓN FALLIDA
+“Las fuerzas aliadas no consiguieron completar el avance sobre Berlín.”
+Objetos
+El sistema de armamento de Second War Now permite al jugador seleccionar entre
+diferentes tipos de munición antes de cada disparo. Cada proyectil cuenta con sus
+propias propiedades físicas como alcance y área de efecto y un trasfondo histórico
+representativo.
+Tipos de proyectiles
+1. Proyectil estándar: La munición perforante básica utilizada por la mayoría
+de los tanques de la época. Cuenta con un alcance de disparo alto, daño
+moderado y un alcance de exploción reducido.
+2. Proyectil pesado: Una bomba pesada de gran fragmentación diseñada para
+destruir con blindaje grueso. Al contar con una mayor masa, tiene un alcance
+de disparo corto, gran daño de impacto y área de efecto de la explción
+moderado.
+3. Proyectil de dispersión: Un proyectil que se divide en varios proyectiles
+más pequeños al ser disparado. Cubre un área de efecto grande, alcance de
+disparo corto y daño moderado.
+
+=== PAGE 19 ===
+19
+4. Proyectil de bombardeo aéreo: Un disparo de una bengala, la cual
+segundos después de caer al suelo o hacer contacto con un tanque caerá un
+bombardeo aéreo en un área alrededor del lugar donde aterrizó la bengala.
+Este proyectil cuenta con un alcance de disparo largo, área de efecto de
+exploción grande y daño alto.
+5. Proyectil incendiario: Munición química que libera una rafaga de fuego al
+ser disparada y al impactar enciende fuego en un área moderada, el fuego
+causa una daño moderado a los tanques alcanzados durante unos segundos
+hasta extinguirse. El alcance de disparo de este proyectil es alto, con daño
+medio y un área de efecto grande.
+El jugador en cada turno podrá seleccionar cual de los proyectiles desea usar en el
+momento pero para volver a hacer uso de un proyectil, primero tendrá que usar los
+demás.
+Trasfondo
+Descripción detallada de la historia y la trama
+La trama de Second War Now sigue una estructura cronológica lineal dividida en 3
+capítulos principales, correspondientes a tres fases clave del conflicto europeo.
+La historia se cuenta a través de un diario de campaña del comandante de una
+tripulación de un blindado aliado. Antes de cada nivel, el jugador recibe un Informe
+de Batalla con datos históricos reales, seguido de un objetivo táctico en el mapa.
+● Capítulo 1 (La batalla de Francia 1940): En mayo de 1940 la Wehrmacht
+alemana rodea las defensas aliadas a través de la región de las Ardenas. La
+velocidad de las divisiones Panzer tomó por sorpresa a las fuerzas francesas
+y británicas, forzando una retirada desesperada hacia el canal de la Mancha.
+El jugador toma el mando de una unidad blindada en los campos rurales del
+norte de Francia. La misión no es invadir, sino contener el avance enemigo
+para permitir la evacuación de las tropas aliadas atrapadas. Las fuerzas
+invasoras aparecen en la cresta opuesta. El jugador debe calcular tiros de
+corta, media y larga distancia sobre el terreno para frenar la primera oleada
+de tanques Panzer. A pesar de los disparos certeros, la superioridad
+numérica enemiga obliga a la tripulación a replegarse, estableciendo la
+sensación de urgencia e impotencia histórica de la fase inicial de la guerra.
+● Capítulo 2 (La segunda batalla de Alamein 1942): Octubre de 1942. Tras
+dos años de combates ida y vuelta en el norte de África, el Octavo Ejército
+Británico y sus aliados lanzan una ofensiva masiva contra los Afrika Korps
+para evitar que el Eje capture el Canal de Suez y los pozos petrolíferos del
+Medio Oriente. El jugador, tras ser reasignado al frente africano, forma parte
+del empuje táctico de ruptura a través de los campos y dunas de El Alamein,
+el jugador debe enfrentarse a blindados enemigos atrincherados detrás de
+grandes dunas de arena. Para impactar, debe realizar disparos de gran
+parábola superando las elevaciones del terreno en cada turno. Tras
+
+=== PAGE 20 ===
+20
+neutralizar las posiciones enemigas, el frente del Eje se quiebra, marcando la
+primera gran victoria táctica de la campaña y un giro decisivo en la guerra.
+● Capítulo 3 (La batalla de Berlín 1945): Abril de 1945. Las fuerzas aliadas y
+soviéticas cercaron la capital del Tercer Reich. La ciudad se ha convertido en
+una fortaleza en ruinas donde cada calle, edificio y barricada es defendida
+desesperadamente por las últimas reservas del Eje. En la fase final de la
+guerra, el jugador lidera la vanguardia que avanza hacia el centro institucional
+de Berlín. El objetivo final es eliminar las posiciones defensivas enemigas,
+destruirlas antes del asalto final. Se desata un duelo en el entorno urbano. El
+jugador debe utilizar tiros precisos para hacer pasar los proyectiles por
+encima de los obstáculos e impactar a las unidades ocultas en el Reichstag.
+Tras destruir los últimos tanques pesados enemigos, cesa el fuego. Aparece
+una pantalla final de cierre con el resumen histórico de la rendición
+incondicional de Alemania en mayo de 1945 y el impacto del fin de la guerra
+en el mundo.
+Entornos y lugares
+El diseño de escenarios/mapas de Second War Now traslada al jugador a tres
+lugares de operaciones icónicos de la Segunda Guerra Mundial. Cada mapa no solo
+aporta diversidad estética y contexto histórico, sino que impone desafíos directos en
+la física del tiro parabólico debido a su topografía. Se consideran 3 mapas
+principales:
+● Mapa 1 (La batalla de Francia): Representa la fase inicial de la guerra y la
+ejecución de la Guerra Relámpago. La misión en este mapa pone al jugador
+en una posición defensiva y de repliegue táctico, intentando contener el
+sorpresivo e implacable avance del Eje a través de Europa Occidental. Al
+estar situados en la parte nor-oriental de Francia el mapa contará con verdes
+intensos, tonos tierra húmeda, cielos despejados de primavera y pueblos
+rurales franceses así como restos de las fortificaciones de la Línea Maginot,
+el terreno contará con colinas de elevación moderada y pendientes suaves.
+● Mapa 2 (La segunda batalla de Alamein): Ahora nos situamos en el norte
+de África (Egipto), recrea uno de los grandes puntos de inflexión de la guerra.
+En este escenario, las fuerzas aliadas y del Eje se enfrentaron en un combate
+masivo de blindados y artillería en medio del desierto, Por ello el mapa
+contará amarillos cálidos, tonos arena, naranjas al atardecer y cielos
+brillantes y despejados, grandes dunas de arena, campamentos militares
+desérticos, palmeras lejanas y restos de suministros abandonados; el terreno
+de dunas pronunciadas que alternan entre crestas altas y valles profundos.
+● Mapa 3 (La batalla de Berlín): El capítulo final del conflicto en el Frente
+Europeo. El mapa representa el asedio a la capital alemana, donde las tropas
+avanzan calle a calle entre las ruinas de una ciudad colapsada, es por esto
+que el mapa contará con una temática urbana, tonos gris ceniza, rojo de
+ladrillo expuesto, negro de humo y tonos sombríos/oscuros, se divisarán
+
+=== PAGE 21 ===
+21
+edificios destruidos, escombros en las calles, barricadas improvisadas con
+desniveles irregulares provocados por cráteres de bombas y montañas de
+escombros.
+Arte
+Estética general del juego
+En cuanto a su identidad visual y temática, Second War Now tendrá una
+representación inspirada en la estética militar de mediados del siglo XX, utilizando
+elementos visuales relacionados con los vehículos, uniformes, escenarios y
+ambientes propios del período histórico. Sin embargo, el proyecto estará planteado
+como una interpretación de carácter educativo y recreativo en 2D, evitando
+representar de manera gráfica o explícita los aspectos más violentos de la guerra.
+Al tratarse de un juego de disparos con tiro parabólico, la visibilidad es prioritaria,
+por ello los elementos de juego (tanques, proyectiles y trayectoria) destacarán
+claramente sobre el fondo para que el jugador pueda medir sus ángulos con
+precisión.
+El juego contará con sprites 2D dibujados en vista lateral de cada tanque jugable,
+así como de los modelos blindados enemigos, los cuales conservan sus siluetas
+históricas distintivas pero simplificadas para facilitar la animación.
+También habrá efectos visuales de partículas, humo, fuego y explosiones en torno a
+los disparos de proyectiles e impactos de los mismos.
+Música
+Estas canciones funcionaran como referencia para el ambientar el juego.
+MARCHA DE LOS VALIENTES:
+La Partitura del Caballero.(20 may 2025). Marcha de los Valientes – Música Épica
+de Caballeros[Video].YouTube.https://www.youtube.com/watch?v=nbtlqoy1fww
+Se utilizara para cuando se inicia el juego y tambien para cuando está en el menú,
+aunque en el menú también se podrá variar con más música
+THE BATTLE:
+Harry Gregson-Williams.(14 ago 2018).The Battle[YouTube].
+https://www.youtube.com/watch?v=7CWYzFk2V6s
+Se utilizará también para el menú y también podría utilizarse algunas partes de esta
+música para a iniciar la batalla.
+We're Going To Fly Now:
+James Newton Howard.(14 mar 2019).We're Going To Fly Now[YouTube].
+
+=== PAGE 22 ===
+22
+https://www.youtube.com/watch?v=TfFxoiCutLw
+Se utilizará para cuando se gane la partida y la misión se cumpla.
+Efectos de sonido
+El juego contará con una variedad de sonidos, se clasificarán de la siguiente manera:
+Tanques
+● Motor de tanque: Sonido que se reproduce cuando el vehículo está encendido y en
+movimiento.
+● Orugas sobre piedra/asfalto: Sonido diferente para representar el desplazamiento
+del tanque sobre superficies duras.
+● Motor arrancando: Sonido que indica el inicio o activación del tanque.
+● Motor apagándose: Sonido que se reproduce cuando el tanque deja de funcionar o
+termina la misión.
+Combate
+● Disparo de cañón: Sonido producido cada vez que un tanque realiza un disparo.
+● Proyectil pasando: Sonido que representa el proyectil desplazándose por el aire.
+● Impacto: Sonido producido cuando un proyectil golpea un vehículo, estructura u
+objeto.
+● Explosión grande: Sonido para representar la destrucción de un vehículo o una
+explosión de mayor intensidad.
+● Fuego: Sonido cuando un tanque o área del mapa se incendie.
+Narrativa
+● Sonido de radio: Sonido utilizado cuando se presentan órdenes, mensajes del
+comandante o información relacionada con la misión.
+● Alerta: Sonido que indica la aparición de un objetivo importante o el inicio de una
+situación relevante.
+● Campana/tono de victoria: Sonido que indica que el jugador ha completado
+correctamente la misión.
+● Sonido de derrota: Sonido que indica que el jugador no consiguió completar el
+objetivo de la misión.
+
+=== PAGE 23 ===
+23
+Requerimientos
+Requerimientos funcionales
+[F01]Combate: El jugador debe enfrentarse a una IA en un combate por turnos.
+Tipo. Funcional
+Prioridad. Obligatorio
+Importancia. 10
+Comentarios. Durante su turno, el jugador y la IA dispondrán de las acciones mencionadas
+en los requisitos F02 y F03, los proyectiles deberán seguir una trayectoria parabólica
+determinada por las condiciones del disparo y la física del juego, con el objetivo de alcanzar
+las unidades enemigas controladas por la inteligencia artificial. El turno de un jugador
+termina al disparar el proyectil y evaluar las consecuencias del disparo.
+[F02]Gestión tanque: El sistema debe permitir controlar las acciones del tanque.
+Tipo. Funcional
+Prioridad. Obligatorio
+Importancia. 10
+Comentarios. Los jugadores dispondrán de una barra de combustible limitada que le
+permitirá desplazar su tanque hacia la izquierda o hacia la derecha sobre el terreno. Cuando
+la barra se agote, no podrá continuar moviéndose hasta su siguiente turno. El sistema
+deberá permitir ajustar manualmente el ángulo del cañón y la potencia del disparo, también
+se podrá seleccionar la acción de disparar.
+[F03]Proyectiles: El sistema debe contar con proyectiles de diversas características.
+Tipo. Funcional
+Prioridad. Obligatorio
+Importancia. 10
+
+=== PAGE 24 ===
+24
+Comentarios. Cada vehículo deberá contar con una selección de municiones especiales de
+uso limitado por partida. El jugador deberá seleccionar el tipo de proyectil que desea utilizar
+en cada turno. No podrá volver a utilizar un tipo de proyectil hasta haber utilizado al menos
+una vez los demás tipos de munición disponibles. Cada proyectil contará con características
+propias de alcance, área de efecto y daño.
+[F04]Tienda: El sistema debe contar con una tienda de cosméticos exclusivos..
+Tipo. Funcional
+Prioridad. Obligatorio
+Importancia. 10
+Comentarios. El juego deberá contar con una tienda que permita al jugador adquirir,
+mediante dinero del juego o compras simuladas con dinero real, apariencias visuales basadas
+en un catálogo de tanques históricos. El jugador podrá seleccionar las experiencias adquiridas
+para utilizarlas durante las partidas.
+[F05]Gestión de misión: El sistema debe permitir seleccionar misiones históricas.
+Tipo. Funcional
+Prioridad. Obligatorio
+Importancia. 10
+Comentarios. El sistema deberá contar con un menú de selección de misiones que permita al
+jugador consultar y elegir los niveles históricos disponibles. Cada misión estará asociada a
+uno de los tres mapas principales del juego, ambientados en la Batalla de Francia de 1940, la
+Segunda Batalla de El Alamein de 1942 y la Batalla de Berlín de 1945.
+Cada mapa contará con una ambientación visual y características del terreno propias de su
+contexto histórico. El mapa de Francia tendrá un entorno rural con colinas suaves y
+
+=== PAGE 25 ===
+25
+vegetación; el de El Alamein presentará un paisaje desértico con dunas pronunciadas y valles;
+y el de Berlín estará compuesto por calles, edificios destruidos, barricadas y escombros.
+El menú deberá permitir identificar cada misión mediante su nombre, año, escenario y una
+breve descripción. Las características específicas y los objetivos de cada misión estarán
+descritos en el apartado de misiones de la documentación.
+El sistema deberá detectar si el jugador completa o falla una misión, de acuerdo con los
+objetivos establecidos para cada nivel. Al finalizar la partida, deberá mostrar un mensaje que
+indique si la misión fue completada o fallida.
+[F06]Cinemáticas: El sistema deberá mostrar cinemáticas de contexto histórico antes de
+empezar las misiones y al ganar la misión.
+Tipo. Funcional
+Prioridad. Obligatorio
+Importancia. 10
+Comentarios. Una vez seleccionada una misión mediante el requisito F05, el sistema deberá
+mostrar una cinemática breve que introduzca el contexto histórico del enfrentamiento,
+incluyendo información relacionada con la época y los acontecimientos que se representan.
+Requerimientos no funcionales
+[NF01]Controles: El sistema debe estar adaptado para funcionar con ratón y teclado.
+Tipo. No Funcional
+Prioridad. Obligatorio
+Importancia. 10
+[NF02]Desarrollo: El sistema debe ser desarrollado en el motor 2D de godot versión 4.7.2.
+Tipo. No Funcional
+
+=== PAGE 26 ===
+26
+Prioridad. Obligatorio
+Importancia. 10
+[NF03]Compatibilidad: El sistema debe ser compatible con versiones de Windows 10 y
+Windows 11 (64-bits).
+Tipo. No Funcional
+Prioridad. Obligatorio
+Importancia. 10
+[NF04]Guardado: El sistema debe guardar un registro automático de los cosméticos
+desbloqueados del jugador y sus misiones desbloqueadas.
+Tipo. Funcional
+Prioridad. Obligatorio
+Importancia. 10
+Comentarios. Sólo se desbloquea una misión al terminar la anterior, este sistema de
+guardado funcionará y se almacenará a través de una archivo .JSON en los archivos
+internos del juego.
+
+=== PAGE 27 ===
+27
+Diagramas UML
+Diagramas de casos de uso
+
+=== PAGE 28 ===
+28
+Descripción casos de uso
+1. Gestion misión:
+
+=== PAGE 29 ===
+29
+2. Reproducción de cinemática histórica:
+
+=== PAGE 30 ===
+30
+3. Iniciar combate:
+
+=== PAGE 31 ===
+31
+4. Gestión tanque:
+
+=== PAGE 32 ===
+32
+5. Gestión proyectiles:
+
+=== PAGE 33 ===
+33
+6. Comprar cosméticos:
+
+=== PAGE 34 ===
+34
+Diagrama de clases
+Diagramas de secuencia
+1. Gestion misión:
+
+=== PAGE 35 ===
+35
+2. Reproducción de sistemática histórica:
+3. Iniciar combate:
+
+=== PAGE 36 ===
+36
+4. Gestión tanque:
+5. Gestión proyectiles:
+
+=== PAGE 37 ===
+37
+6. Comprar cosméticos:

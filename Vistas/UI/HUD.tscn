@@ -1,0 +1,608 @@
+[gd_scene load_steps=19 format=3]
+
+[ext_resource type="Script" path="res://Vistas/UI/HUD.gd" id="1"]
+[ext_resource type="Texture2D" path="res://Imagenes/UI/ProyectilesMenu.jpg" id="2"]
+[ext_resource type="FontFile" path="res://Vistas/Recursos/Fuentes/Oswald-Variable.ttf" id="3"]
+
+[ext_resource type="Script" path="res://Vistas/UI/PanelResultado.gd" id="4_resultado"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aviso_retirada"]
+bg_color = Color(0.055, 0.09, 0.12, 0.96)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.88, 0.71, 0.36, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+content_margin_left = 22.0
+content_margin_top = 14.0
+content_margin_right = 22.0
+content_margin_bottom = 14.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel_municion"]
+bg_color = Color(0.13, 0.16, 0.11, 0.96)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.57, 0.4, 0.2, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+content_margin_left = 10.0
+content_margin_top = 7.0
+content_margin_right = 10.0
+content_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel_estado"]
+bg_color = Color(0.13, 0.15, 0.11, 0.88)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.78, 0.63, 0.37, 0.94)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fondo_dato"]
+bg_color = Color(0.77, 0.68, 0.48, 0.78)
+border_width_left = 3
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.88, 0.76, 0.48, 0.86)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fondo_estado_turno"]
+bg_color = Color(0.22, 0.25, 0.18, 0.94)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.77, 0.61, 0.35, 0.88)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+content_margin_left = 8.0
+content_margin_top = 1.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_opcion_municion"]
+bg_color = Color(0.83, 0.73, 0.52, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.36, 0.25, 0.14, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_opcion_activa"]
+bg_color = Color(0.91, 0.77, 0.39, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.98, 0.84, 0.44, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_base_joystick"]
+bg_color = Color(0.13, 0.16, 0.11, 0.62)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.83, 0.69, 0.42, 0.78)
+corner_radius_top_left = 70
+corner_radius_top_right = 70
+corner_radius_bottom_right = 70
+corner_radius_bottom_left = 70
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_control_joystick"]
+bg_color = Color(0.85, 0.72, 0.45, 0.92)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.31, 0.25, 0.15, 0.96)
+corner_radius_top_left = 21
+corner_radius_top_right = 21
+corner_radius_bottom_right = 21
+corner_radius_bottom_left = 21
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_estandar"]
+atlas = ExtResource("2")
+region = Rect2(35, 195, 157, 172)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pesado"]
+atlas = ExtResource("2")
+region = Rect2(234, 195, 157, 172)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dispersion"]
+atlas = ExtResource("2")
+region = Rect2(433, 195, 157, 172)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bombardeo"]
+atlas = ExtResource("2")
+region = Rect2(632, 195, 157, 172)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_incendiario"]
+atlas = ExtResource("2")
+region = Rect2(831, 195, 157, 172)
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1")
+
+[node name="Interfaz" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelEstado" type="Panel" parent="Interfaz"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 376.0
+offset_bottom = 284.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel_estado")
+
+[node name="Contenido" type="VBoxContainer" parent="Interfaz/PanelEstado"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = 8.0
+offset_right = -11.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 3
+
+[node name="Encabezado" type="Label" parent="Interfaz/PanelEstado/Contenido"]
+custom_minimum_size = Vector2(0, 13)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3")
+theme_override_colors/font_color = Color(0.82, 0.72, 0.52, 1)
+theme_override_font_sizes/font_size = 10
+text = "INFORME DE COMBATE"
+horizontal_alignment = 1
+
+[node name="Turno" type="Label" parent="Interfaz/PanelEstado/Contenido"]
+custom_minimum_size = Vector2(0, 31)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_fondo_estado_turno")
+theme_override_font_sizes/font_size = 21
+text = "TU TURNO"
+horizontal_alignment = 1
+
+[node name="Estado" type="Label" parent="Interfaz/PanelEstado/Contenido"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.91, 0.85, 0.71, 1)
+theme_override_font_sizes/font_size = 11
+text = "Preparando combate"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Mision" type="Label" parent="Interfaz/PanelEstado/Contenido"]
+custom_minimum_size = Vector2(0, 23)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3")
+theme_override_colors/font_color = Color(0.95, 0.84, 0.58, 1)
+theme_override_font_sizes/font_size = 18
+text = "Misión"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Objetivo" type="Label" parent="Interfaz/PanelEstado/Contenido"]
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.87, 0.77, 1)
+theme_override_font_sizes/font_size = 11
+text = "Objetivo"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="VidaJugador" type="Label" parent="Interfaz/PanelEstado/Contenido"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_fondo_dato")
+theme_override_colors/font_color = Color(0.16, 0.15, 0.11, 1)
+theme_override_font_sizes/font_size = 13
+text = "Jugador: 100 / 100 HP"
+horizontal_alignment = 1
+
+[node name="Posicion" type="Label" parent="Interfaz/PanelEstado/Contenido"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "Posición defensiva: 1 / 1"
+horizontal_alignment = 1
+
+[node name="CuentaAtras" type="Label" parent="Interfaz"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_right = 150.0
+offset_top = 18.0
+offset_bottom = 68.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 28
+text = "EVACÚA EN 30 s"
+horizontal_alignment = 1
+mouse_filter = 2
+
+[node name="Combustible" type="Label" parent="Interfaz/PanelEstado/Contenido"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_fondo_dato")
+theme_override_colors/font_color = Color(0.16, 0.15, 0.11, 1)
+theme_override_font_sizes/font_size = 13
+text = "Combustible: 180 / 180"
+horizontal_alignment = 1
+
+[node name="VidaEnemigo" type="Label" parent="Interfaz/PanelEstado/Contenido"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_fondo_dato")
+theme_override_colors/font_color = Color(0.16, 0.15, 0.11, 1)
+theme_override_font_sizes/font_size = 13
+text = "Enemigo: 100 / 100 HP"
+horizontal_alignment = 1
+
+[node name="PanelMunicion" type="PanelContainer" parent="Interfaz"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -316.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 82.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel_municion")
+
+[node name="Contenido" type="MarginContainer" parent="Interfaz/PanelMunicion"]
+layout_mode = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="BotonMunicionSeleccionada" type="Button" parent="Interfaz/PanelMunicion/Contenido"]
+custom_minimum_size = Vector2(278, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+icon = SubResource("AtlasTexture_estandar")
+icon_alignment = 0
+expand_icon = true
+text = "Munición: Estándar  ▼"
+
+[node name="MenuDesplegable" type="PanelContainer" parent="Interfaz"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -316.0
+offset_top = 90.0
+offset_right = -16.0
+offset_bottom = 370.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel_municion")
+
+[node name="Opciones" type="VBoxContainer" parent="Interfaz/MenuDesplegable"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="IndicacionJoystick" type="Label" parent="Interfaz"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = -207.0
+offset_right = 190.0
+offset_bottom = -184.0
+grow_vertical = 0
+z_index = 20
+theme_override_colors/font_color = Color(0.95, 0.87, 0.69, 0.9)
+theme_override_font_sizes/font_size = 11
+text = "ARRASTRA PARA APUNTAR"
+horizontal_alignment = 1
+mouse_filter = 2
+
+[node name="JoystickBase" type="Panel" parent="Interfaz"]
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 36.0
+offset_top = -184.0
+offset_right = 176.0
+offset_bottom = -44.0
+grow_vertical = 0
+z_index = 20
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_base_joystick")
+
+[node name="Perilla" type="Panel" parent="Interfaz/JoystickBase"]
+custom_minimum_size = Vector2(42, 42)
+offset_left = 49.0
+offset_top = 49.0
+offset_right = 91.0
+offset_bottom = 91.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_control_joystick")
+
+[node name="Estandar" type="Button" parent="Interfaz/MenuDesplegable/Opciones"]
+custom_minimum_size = Vector2(278, 48)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_opcion_municion")
+theme_override_styles/hover = SubResource("StyleBoxFlat_opcion_activa")
+
+[node name="Contenido" type="HBoxContainer" parent="Interfaz/MenuDesplegable/Opciones/Estandar"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 4
+
+[node name="Icono" type="TextureRect" parent="Interfaz/MenuDesplegable/Opciones/Estandar/Contenido"]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+texture = SubResource("AtlasTexture_estandar")
+expand_mode = 1
+stretch_mode = 6
+mouse_filter = 2
+
+[node name="Nombre" type="Label" parent="Interfaz/MenuDesplegable/Opciones/Estandar/Contenido"]
+size_flags_horizontal = 3
+layout_mode = 2
+theme_override_colors/font_color = Color(0.16, 0.12, 0.08, 1)
+theme_override_font_sizes/font_size = 14
+text = "Estándar"
+horizontal_alignment = 1
+mouse_filter = 2
+
+[node name="Estado" type="Label" parent="Interfaz/MenuDesplegable/Opciones/Estandar/Contenido"]
+custom_minimum_size = Vector2(82, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.29, 0.22, 0.12, 1)
+theme_override_font_sizes/font_size = 11
+text = "DISPONIBLE"
+horizontal_alignment = 1
+mouse_filter = 2
+
+[node name="Pesado" type="Button" parent="Interfaz/MenuDesplegable/Opciones"]
+custom_minimum_size = Vector2(278, 48)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_opcion_municion")
+theme_override_styles/hover = SubResource("StyleBoxFlat_opcion_activa")
+
+[node name="Contenido" type="HBoxContainer" parent="Interfaz/MenuDesplegable/Opciones/Pesado"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 4
+
+[node name="Icono" type="TextureRect" parent="Interfaz/MenuDesplegable/Opciones/Pesado/Contenido"]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+texture = SubResource("AtlasTexture_pesado")
+expand_mode = 1
+stretch_mode = 6
+mouse_filter = 2
+
+[node name="Nombre" type="Label" parent="Interfaz/MenuDesplegable/Opciones/Pesado/Contenido"]
+size_flags_horizontal = 3
+layout_mode = 2
+theme_override_colors/font_color = Color(0.16, 0.12, 0.08, 1)
+theme_override_font_sizes/font_size = 14
+text = "Pesado"
+horizontal_alignment = 1
+mouse_filter = 2
+
+[node name="Estado" type="Label" parent="Interfaz/MenuDesplegable/Opciones/Pesado/Contenido"]
+custom_minimum_size = Vector2(82, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.29, 0.22, 0.12, 1)
+theme_override_font_sizes/font_size = 11
+text = "DISPONIBLE"
+horizontal_alignment = 1
+mouse_filter = 2
+
+[node name="Dispersion" type="Button" parent="Interfaz/MenuDesplegable/Opciones"]
+custom_minimum_size = Vector2(278, 48)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_opcion_municion")
+theme_override_styles/hover = SubResource("StyleBoxFlat_opcion_activa")
+
+[node name="Contenido" type="HBoxContainer" parent="Interfaz/MenuDesplegable/Opciones/Dispersion"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 4
+
+[node name="Icono" type="TextureRect" parent="Interfaz/MenuDesplegable/Opciones/Dispersion/Contenido"]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+texture = SubResource("AtlasTexture_dispersion")
+expand_mode = 1
+stretch_mode = 6
+mouse_filter = 2
+
+[node name="Nombre" type="Label" parent="Interfaz/MenuDesplegable/Opciones/Dispersion/Contenido"]
+size_flags_horizontal = 3
+layout_mode = 2
+theme_override_colors/font_color = Color(0.16, 0.12, 0.08, 1)
+theme_override_font_sizes/font_size = 14
+text = "Dispersión"
+horizontal_alignment = 1
+mouse_filter = 2
+
+[node name="Estado" type="Label" parent="Interfaz/MenuDesplegable/Opciones/Dispersion/Contenido"]
+custom_minimum_size = Vector2(82, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.29, 0.22, 0.12, 1)
+theme_override_font_sizes/font_size = 11
+text = "DISPONIBLE"
+horizontal_alignment = 1
+mouse_filter = 2
+
+[node name="Bombardeo" type="Button" parent="Interfaz/MenuDesplegable/Opciones"]
+custom_minimum_size = Vector2(278, 48)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_opcion_municion")
+theme_override_styles/hover = SubResource("StyleBoxFlat_opcion_activa")
+
+[node name="Contenido" type="HBoxContainer" parent="Interfaz/MenuDesplegable/Opciones/Bombardeo"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 4
+
+[node name="Icono" type="TextureRect" parent="Interfaz/MenuDesplegable/Opciones/Bombardeo/Contenido"]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+texture = SubResource("AtlasTexture_bombardeo")
+expand_mode = 1
+stretch_mode = 6
+mouse_filter = 2
+
+[node name="Nombre" type="Label" parent="Interfaz/MenuDesplegable/Opciones/Bombardeo/Contenido"]
+size_flags_horizontal = 3
+layout_mode = 2
+theme_override_colors/font_color = Color(0.16, 0.12, 0.08, 1)
+theme_override_font_sizes/font_size = 14
+text = "Bombardeo"
+horizontal_alignment = 1
+mouse_filter = 2
+
+[node name="Estado" type="Label" parent="Interfaz/MenuDesplegable/Opciones/Bombardeo/Contenido"]
+custom_minimum_size = Vector2(82, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.29, 0.22, 0.12, 1)
+theme_override_font_sizes/font_size = 11
+text = "DISPONIBLE"
+horizontal_alignment = 1
+mouse_filter = 2
+
+[node name="Incendiario" type="Button" parent="Interfaz/MenuDesplegable/Opciones"]
+custom_minimum_size = Vector2(278, 48)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_opcion_municion")
+theme_override_styles/hover = SubResource("StyleBoxFlat_opcion_activa")
+
+[node name="Contenido" type="HBoxContainer" parent="Interfaz/MenuDesplegable/Opciones/Incendiario"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 4
+
+[node name="Icono" type="TextureRect" parent="Interfaz/MenuDesplegable/Opciones/Incendiario/Contenido"]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+texture = SubResource("AtlasTexture_incendiario")
+expand_mode = 1
+stretch_mode = 6
+mouse_filter = 2
+
+[node name="Nombre" type="Label" parent="Interfaz/MenuDesplegable/Opciones/Incendiario/Contenido"]
+size_flags_horizontal = 3
+layout_mode = 2
+theme_override_colors/font_color = Color(0.16, 0.12, 0.08, 1)
+theme_override_font_sizes/font_size = 14
+text = "Incendiario"
+horizontal_alignment = 1
+mouse_filter = 2
+
+[node name="Estado" type="Label" parent="Interfaz/MenuDesplegable/Opciones/Incendiario/Contenido"]
+custom_minimum_size = Vector2(82, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.29, 0.22, 0.12, 1)
+theme_override_font_sizes/font_size = 11
+text = "DISPONIBLE"
+horizontal_alignment = 1
+mouse_filter = 2
+
+[node name="AvisoRetirada" type="Control" parent="Interfaz"]
+visible = false
+z_index = 50
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 210.0
+offset_top = 38.0
+offset_right = -210.0
+offset_bottom = 188.0
+grow_horizontal = 2
+pivot_offset = Vector2(430, 75)
+
+[node name="Panel" type="PanelContainer" parent="Interfaz/AvisoRetirada"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_aviso_retirada")
+
+[node name="Contenido" type="VBoxContainer" parent="Interfaz/AvisoRetirada/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Titulo" type="Label" parent="Interfaz/AvisoRetirada/Panel/Contenido"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.51, 1)
+theme_override_font_sizes/font_size = 24
+text = "¡POSICIÓN NEUTRALIZADA!"
+horizontal_alignment = 1
+
+[node name="Mensaje" type="Label" parent="Interfaz/AvisoRetirada/Panel/Contenido"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.96, 0.94, 1)
+theme_override_font_sizes/font_size = 17
+text = "La retirada continúa. ¡Avanza hacia la zona de evacuación!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="PanelResultado" type="ColorRect" parent="Interfaz"]
+visible = false
+layout_mode = 1
+z_index = 100
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07, 0.065, 0.05, 0.88)
+script = ExtResource("4_resultado")
+
+[node name="Centro" type="CenterContainer" parent="Interfaz/PanelResultado"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+

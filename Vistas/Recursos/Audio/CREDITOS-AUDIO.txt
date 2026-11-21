@@ -1,0 +1,73 @@
+SECOND WAR NOW — SONIDOS DE PARTIDA
+Selector de municiones (19 de noviembre de 2026): siete WAV derivados de
+click1/2, switch3/5/10 e impactMetal_heavy_000/001 de Kenney (CC0), y
+fire-1.wav de AntumDeluge (CC0). Fuentes y licencias detalladas debajo.
+Ediciones: recortes, filtros, cambio de velocidad, capas, fundidos y pico 0.65.
+Recetas: tools/audio/preparar-selector.cjs; parámetros en manifest.json.
+Preparación e integración: 15 de noviembre de 2026.
+
+Motor: Engine-loop heavy vehicle/tank — Nayckron, basado en trabajo de
+Iwan "qubodup" Gabovitch. Licencia elegida: Creative Commons Attribution 3.0.
+https://opengameart.org/content/engine-loop-heavy-vehicletank
+https://creativecommons.org/licenses/by/3.0/
+Original: engine_heavy_loop_1.ogg (conservado como engine.ogg).
+Cambios: conversión mono, filtros, recorte, unión circular, normalización;
+motor.ogg. No es una grabación histórica verificada de un modelo concreto.
+
+Mecanismos: Chain winch sounds — bart. CC0 1.0.
+https://opengameart.org/content/chain-winch-sounds
+Originales de winch.zip; cadenas.ogg y engranajes.ogg: cambio de velocidad,
+mezcla mono, filtros, unión circular y normalización.
+
+Explosiones: Explosions — EZduzziteh. CC0 1.0.
+https://opengameart.org/content/explosions-4
+Originales explosion1_0.ogg, explosion2.ogg y explosion3.ogg.
+Derivados: disparo.wav, destruccion.wav, impacto_*_0/1/2.wav y bombardeo.ogg.
+Cambios: filtros, velocidad, recorte, normalización, fundidos y bucle de bombardeo.
+
+Fuego: Fire Crackling — AntumDeluge. CC0 1.0.
+https://opengameart.org/content/fire-crackling
+Original fire-1.wav; fuego.ogg: mono, filtros, recorte y unión circular.
+
+Materiales: Impact Sounds — Kenney (Kenney.nl). CC0 1.0.
+https://kenney.nl/assets/impact-sounds
+Originales: impactMetal_heavy_000/001/002, impactSoft_heavy_000/001/002,
+impactMining_000/001/002, footstep_snow_000/001/002,
+footstep_grass_000/001/002, footstep_concrete_000/001/002.
+Derivados: metal_*, tierra_*, arena_*, escombros_* y rodar_*.ogg.
+Cambios: mono, normalización y fundidos; nieve filtrada para contacto arenoso;
+superposición circular de contactos para los bucles de rodaje.
+
+Señales: UI Audio — Kenney (Kenney.nl). CC0 1.0.
+https://kenney.nl/assets/ui-audio
+Originales click1.ogg, click2.ogg, switch3.ogg, switch5.ogg, switch10.ogg.
+Derivados: division, bengala, turno_jugador, turno_enemigo, evacuacion,
+cuenta y refuerzos (.wav). Cambios: mono, normalización y fundidos.
+
+CC0: https://creativecommons.org/publicdomain/zero/1.0/
+Los archivos de Kenney se obtuvieron de una copia pública del paquete, al
+devolver HTTP 403 el servidor de descarga oficial:
+https://github.com/Mcamento8/open-game-sfx-index/tree/main/audio
+La fuente y licencia del autor se verificaron por separado en Kenney.nl.
+
+El repositorio conserva originales y fichas de OpenGameArt en
+tools/audio/originales, excluidos de la exportación. Las recetas exactas y el
+mapa original/derivado están en tools/audio/preparar.cjs y manifest.json.
+Estos sonidos no implican patrocinio ni aprobación de sus autores.
+
+BANDA SONORA — fuentes publicadas bajo CC0 1.0
+https://creativecommons.org/publicdomain/zero/1.0/
+
+Menú, selector e informe: Orchestra Loop — HaelDB.
+https://opengameart.org/content/orchestra-loop
+Tienda: variación de la misma grabación con separación de componentes sostenidas,
+percusión suavizada, ecualización y tempo al 93 %.
+
+Francia: Determined Pursuit — Emma_MA.
+https://opengameart.org/content/determined-pursuit-epic-orchestra-loop
+El Alamein: Hope (Orchestral battle music) — MintoDog.
+https://opengameart.org/content/hopeorchestral-battle-music
+Berlín: The Final Battle — skrjablin.
+https://opengameart.org/content/the-final-battle
+
+Edición común: ajuste de nivel, unión circular de 18 ms y codificación Vorbis.

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cj5ode5uqiosi"
+path="res://.godot/imported/winch - Marker #6.wav-cc4208ca285b367a92e6cca5420a0201.sample"
+
+[deps]
+
+source_file="res://tools/audio/originales/winch/winch - Marker #6.wav"
+dest_files=["res://.godot/imported/winch - Marker #6.wav-cc4208ca285b367a92e6cca5420a0201.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

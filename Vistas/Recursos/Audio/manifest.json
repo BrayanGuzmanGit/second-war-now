@@ -1,0 +1,618 @@
+[
+  {
+    "archivo": "motor.ogg",
+    "originales": [
+      "engine.ogg"
+    ],
+    "edicion": "Mono, filtros, fundido circular y normalización",
+    "pico": 0.65,
+    "bucle": true
+  },
+  {
+    "archivo": "cadenas.ogg",
+    "originales": [
+      "winch/winch - Marker #2.wav"
+    ],
+    "edicion": "Mono, velocidad 0.75, filtro, unión circular",
+    "pico": 0.65,
+    "bucle": true
+  },
+  {
+    "archivo": "engranajes.ogg",
+    "originales": [
+      "winch/winch - Marker #3.wav"
+    ],
+    "edicion": "Mono, velocidad 0.9, filtros y unión circular",
+    "pico": 0.65,
+    "bucle": true
+  },
+  {
+    "archivo": "fuego.ogg",
+    "originales": [
+      "fire-1.wav"
+    ],
+    "edicion": "Mono, filtros y unión circular",
+    "pico": 0.65,
+    "bucle": true
+  },
+  {
+    "archivo": "bombardeo.ogg",
+    "originales": [
+      "explosion1_0.ogg"
+    ],
+    "edicion": "Explosión grave sostenida, unión circular",
+    "pico": 0.65,
+    "bucle": true
+  },
+  {
+    "archivo": "metal_0.wav",
+    "originales": [
+      "impactMetal_heavy_000.ogg"
+    ],
+    "edicion": "Mono, filtro de arena cuando corresponde, fades y normalización",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "metal_1.wav",
+    "originales": [
+      "impactMetal_heavy_001.ogg"
+    ],
+    "edicion": "Mono, filtro de arena cuando corresponde, fades y normalización",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "metal_2.wav",
+    "originales": [
+      "impactMetal_heavy_002.ogg"
+    ],
+    "edicion": "Mono, filtro de arena cuando corresponde, fades y normalización",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "tierra_0.wav",
+    "originales": [
+      "impactSoft_heavy_000.ogg"
+    ],
+    "edicion": "Mono, filtro de arena cuando corresponde, fades y normalización",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "tierra_1.wav",
+    "originales": [
+      "impactSoft_heavy_001.ogg"
+    ],
+    "edicion": "Mono, filtro de arena cuando corresponde, fades y normalización",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "tierra_2.wav",
+    "originales": [
+      "impactSoft_heavy_002.ogg"
+    ],
+    "edicion": "Mono, filtro de arena cuando corresponde, fades y normalización",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "arena_0.wav",
+    "originales": [
+      "footstep_snow_000.ogg"
+    ],
+    "edicion": "Mono, filtro de arena cuando corresponde, fades y normalización",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "arena_1.wav",
+    "originales": [
+      "footstep_snow_001.ogg"
+    ],
+    "edicion": "Mono, filtro de arena cuando corresponde, fades y normalización",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "arena_2.wav",
+    "originales": [
+      "footstep_snow_002.ogg"
+    ],
+    "edicion": "Mono, filtro de arena cuando corresponde, fades y normalización",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "escombros_0.wav",
+    "originales": [
+      "impactMining_000.ogg"
+    ],
+    "edicion": "Mono, filtro de arena cuando corresponde, fades y normalización",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "escombros_1.wav",
+    "originales": [
+      "impactMining_001.ogg"
+    ],
+    "edicion": "Mono, filtro de arena cuando corresponde, fades y normalización",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "escombros_2.wav",
+    "originales": [
+      "impactMining_002.ogg"
+    ],
+    "edicion": "Mono, filtro de arena cuando corresponde, fades y normalización",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "rodar_tierra.ogg",
+    "originales": [
+      "footstep_grass_000.ogg",
+      "footstep_grass_001.ogg",
+      "footstep_grass_002.ogg"
+    ],
+    "edicion": "Capas de contacto solapadas en bucle circular, mono",
+    "pico": 0.65,
+    "bucle": true
+  },
+  {
+    "archivo": "rodar_arena.ogg",
+    "originales": [
+      "footstep_snow_000.ogg",
+      "footstep_snow_001.ogg",
+      "footstep_snow_002.ogg"
+    ],
+    "edicion": "Capas de contacto solapadas en bucle circular, mono",
+    "pico": 0.65,
+    "bucle": true
+  },
+  {
+    "archivo": "rodar_escombros.ogg",
+    "originales": [
+      "footstep_concrete_000.ogg",
+      "footstep_concrete_001.ogg",
+      "footstep_concrete_002.ogg"
+    ],
+    "edicion": "Capas de contacto solapadas en bucle circular, mono",
+    "pico": 0.65,
+    "bucle": true
+  },
+  {
+    "archivo": "impacto_estandar_0.wav",
+    "originales": [
+      "explosion1_0.ogg"
+    ],
+    "edicion": "Velocidad 1, filtro 5000 Hz, recorte y fades",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "impacto_estandar_1.wav",
+    "originales": [
+      "explosion2.ogg"
+    ],
+    "edicion": "Velocidad 1, filtro 5000 Hz, recorte y fades",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "impacto_estandar_2.wav",
+    "originales": [
+      "explosion3.ogg"
+    ],
+    "edicion": "Velocidad 1, filtro 5000 Hz, recorte y fades",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "impacto_pesado_0.wav",
+    "originales": [
+      "explosion1_0.ogg"
+    ],
+    "edicion": "Velocidad 0.7, filtro 2200 Hz, recorte y fades",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "impacto_pesado_1.wav",
+    "originales": [
+      "explosion2.ogg"
+    ],
+    "edicion": "Velocidad 0.7, filtro 2200 Hz, recorte y fades",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "impacto_pesado_2.wav",
+    "originales": [
+      "explosion3.ogg"
+    ],
+    "edicion": "Velocidad 0.7, filtro 2200 Hz, recorte y fades",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "impacto_dispersion_0.wav",
+    "originales": [
+      "explosion1_0.ogg"
+    ],
+    "edicion": "Velocidad 1.4, filtro 4800 Hz, recorte y fades",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "impacto_dispersion_1.wav",
+    "originales": [
+      "explosion2.ogg"
+    ],
+    "edicion": "Velocidad 1.4, filtro 4800 Hz, recorte y fades",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "impacto_dispersion_2.wav",
+    "originales": [
+      "explosion3.ogg"
+    ],
+    "edicion": "Velocidad 1.4, filtro 4800 Hz, recorte y fades",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "impacto_bombardeo_0.wav",
+    "originales": [
+      "explosion1_0.ogg"
+    ],
+    "edicion": "Velocidad 0.8, filtro 1800 Hz, recorte y fades",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "impacto_bombardeo_1.wav",
+    "originales": [
+      "explosion2.ogg"
+    ],
+    "edicion": "Velocidad 0.8, filtro 1800 Hz, recorte y fades",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "impacto_bombardeo_2.wav",
+    "originales": [
+      "explosion3.ogg"
+    ],
+    "edicion": "Velocidad 0.8, filtro 1800 Hz, recorte y fades",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "impacto_incendiario_0.wav",
+    "originales": [
+      "explosion1_0.ogg"
+    ],
+    "edicion": "Velocidad 1.1, filtro 3800 Hz, recorte y fades",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "impacto_incendiario_1.wav",
+    "originales": [
+      "explosion2.ogg"
+    ],
+    "edicion": "Velocidad 1.1, filtro 3800 Hz, recorte y fades",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "impacto_incendiario_2.wav",
+    "originales": [
+      "explosion3.ogg"
+    ],
+    "edicion": "Velocidad 1.1, filtro 3800 Hz, recorte y fades",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "disparo.wav",
+    "originales": [
+      "explosion1_0.ogg"
+    ],
+    "edicion": "Filtros, recorte 1.2s y fades",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "destruccion.wav",
+    "originales": [
+      "explosion3.ogg"
+    ],
+    "edicion": "Velocidad 0.75, filtro, fades",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "division.wav",
+    "originales": [
+      "click2.ogg"
+    ],
+    "edicion": "Mono, normalización y fades",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "bengala.wav",
+    "originales": [
+      "switch3.ogg"
+    ],
+    "edicion": "Mono, normalización y fades",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "turno_jugador.wav",
+    "originales": [
+      "click1.ogg"
+    ],
+    "edicion": "Mono, normalización y fades",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "turno_enemigo.wav",
+    "originales": [
+      "click2.ogg"
+    ],
+    "edicion": "Mono, normalización y fades",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "evacuacion.wav",
+    "originales": [
+      "switch5.ogg"
+    ],
+    "edicion": "Mono, normalización y fades",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "cuenta.wav",
+    "originales": [
+      "switch3.ogg"
+    ],
+    "edicion": "Mono, normalización y fades",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "refuerzos.wav",
+    "originales": [
+      "switch10.ogg"
+    ],
+    "edicion": "Mono, normalización y fades",
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "selector_abrir.wav",
+    "originales": [
+      "click1.ogg"
+    ],
+    "edicion": {
+      "duracion": 0.1,
+      "capas": [
+        [
+          "click1.ogg",
+          "highpass=f=250,lowpass=f=4500",
+          0,
+          1,
+          0.1
+        ]
+      ],
+      "descripcion": "Recorte inicial, filtros, montaje, fundidos de 2–10 ms y pico 0.65"
+    },
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "selector_cerrar.wav",
+    "originales": [
+      "click2.ogg"
+    ],
+    "edicion": {
+      "duracion": 0.1,
+      "capas": [
+        [
+          "click2.ogg",
+          "lowpass=f=3200",
+          0,
+          1,
+          0.1
+        ]
+      ],
+      "descripcion": "Recorte inicial, filtros, montaje, fundidos de 2–10 ms y pico 0.65"
+    },
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "selector_estandar.wav",
+    "originales": [
+      "impactMetal_heavy_000.ogg",
+      "switch3.ogg"
+    ],
+    "edicion": {
+      "duracion": 0.15,
+      "capas": [
+        [
+          "impactMetal_heavy_000.ogg",
+          "highpass=f=200,lowpass=f=4000",
+          0,
+          0.65,
+          0.12
+        ],
+        [
+          "switch3.ogg",
+          "anull",
+          0.035,
+          0.5,
+          0.115
+        ]
+      ],
+      "descripcion": "Recorte inicial, filtros, montaje, fundidos de 2–10 ms y pico 0.65"
+    },
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "selector_pesado.wav",
+    "originales": [
+      "impactMetal_heavy_001.ogg",
+      "switch5.ogg"
+    ],
+    "edicion": {
+      "duracion": 0.25,
+      "capas": [
+        [
+          "impactMetal_heavy_001.ogg",
+          "asetrate=33075,aresample=44100,lowpass=f=2400",
+          0,
+          1,
+          0.24
+        ],
+        [
+          "switch5.ogg",
+          "lowpass=f=2500",
+          0.1,
+          0.35,
+          0.15
+        ]
+      ],
+      "descripcion": "Recorte inicial, filtros, montaje, fundidos de 2–10 ms y pico 0.65"
+    },
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "selector_dispersion.wav",
+    "originales": [
+      "switch3.ogg"
+    ],
+    "edicion": {
+      "duracion": 0.25,
+      "capas": [
+        [
+          "switch3.ogg",
+          "asetrate=48510,aresample=44100,highpass=f=350",
+          0,
+          1,
+          0.09
+        ],
+        [
+          "switch3.ogg",
+          "asetrate=50715,aresample=44100,highpass=f=350",
+          0.075,
+          1,
+          0.09
+        ],
+        [
+          "switch3.ogg",
+          "asetrate=52920,aresample=44100,highpass=f=350",
+          0.15,
+          1,
+          0.09
+        ]
+      ],
+      "descripcion": "Recorte inicial, filtros, montaje, fundidos de 2–10 ms y pico 0.65"
+    },
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "selector_bombardeo.wav",
+    "originales": [
+      "switch10.ogg",
+      "click2.ogg"
+    ],
+    "edicion": {
+      "duracion": 0.3,
+      "capas": [
+        [
+          "switch10.ogg",
+          "lowpass=f=3500",
+          0,
+          0.9,
+          0.12
+        ],
+        [
+          "click2.ogg",
+          "highpass=f=400,lowpass=f=2600",
+          0.09,
+          0.25,
+          0.05
+        ],
+        [
+          "click2.ogg",
+          "highpass=f=400,lowpass=f=2600",
+          0.14,
+          0.25,
+          0.05
+        ],
+        [
+          "click2.ogg",
+          "highpass=f=400,lowpass=f=2600",
+          0.19,
+          0.25,
+          0.05
+        ],
+        [
+          "click2.ogg",
+          "highpass=f=400,lowpass=f=2600",
+          0.24,
+          0.25,
+          0.05
+        ]
+      ],
+      "descripcion": "Recorte inicial, filtros, montaje, fundidos de 2–10 ms y pico 0.65"
+    },
+    "pico": 0.65,
+    "bucle": false
+  },
+  {
+    "archivo": "selector_incendiario.wav",
+    "originales": [
+      "impactMetal_heavy_000.ogg",
+      "fire-1.wav"
+    ],
+    "edicion": {
+      "duracion": 0.25,
+      "capas": [
+        [
+          "impactMetal_heavy_000.ogg",
+          "highpass=f=500,lowpass=f=4500",
+          0,
+          0.65,
+          0.09
+        ],
+        [
+          "fire-1.wav",
+          "highpass=f=900,lowpass=f=5500",
+          0.055,
+          0.65,
+          0.195
+        ]
+      ],
+      "descripcion": "Recorte inicial, filtros, montaje, fundidos de 2–10 ms y pico 0.65"
+    },
+    "pico": 0.65,
+    "bucle": false
+  }
+]

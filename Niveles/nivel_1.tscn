@@ -1,0 +1,78 @@
+[gd_scene load_steps=11 format=3 uid="uid://ctp516o1anhou"]
+
+[ext_resource type="Texture2D" path="res://Imagenes/Fondos/MapaFrancia1940.jpeg" id="1_francia"]
+[ext_resource type="PackedScene" uid="uid://cqpsn2scylvk6" path="res://Niveles/suelo.tscn" id="2_rhy5s"]
+[ext_resource type="PackedScene" uid="uid://w5pjvblx8b2l" path="res://Jugador/TanqueJugador.tscn" id="3_yx6ie"]
+[ext_resource type="PackedScene" path="res://Vistas/Tanques/TanqueIA.tscn" id="4_tanque_ia"]
+[ext_resource type="PackedScene" path="res://Vistas/UI/HUD.tscn" id="5_hud"]
+[ext_resource type="Script" uid="uid://kteonbvhsd6c" path="res://Controladores/ControladorCombate.gd" id="6_controlador"]
+[ext_resource type="Script" uid="uid://dtqyt22msswp4" path="res://Controladores/GestorProyectiles.gd" id="7_gestor"]
+[ext_resource type="Texture2D" path="res://Imagenes/Fondos/MapaElAlamein1942.jpeg" id="8_alamein"]
+[ext_resource type="Texture2D" path="res://Imagenes/Fondos/MapaBerlin1945.jpeg" id="9_berlin"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_zona_evac"]
+size = Vector2(100, 160)
+
+[node name="Nivel1" type="Node2D" unique_id=1561899182]
+
+[node name="MapaFrancia" type="Sprite2D" parent="." unique_id=236986062]
+position = Vector2(900, 502.326)
+scale = Vector2(0.6540698, 0.6540698)
+texture = ExtResource("1_francia")
+
+[node name="MapaElAlamein" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(900, 502.326)
+scale = Vector2(0.6540698, 0.6540698)
+texture = ExtResource("8_alamein")
+
+[node name="MapaBerlin" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(900, 502.326)
+scale = Vector2(0.6540698, 0.6540698)
+texture = ExtResource("9_berlin")
+
+[node name="Suelo" parent="." unique_id=491134464 instance=ExtResource("2_rhy5s")]
+position = Vector2(900, 832)
+
+[node name="PuntoObjetivo" type="Marker2D" parent="." unique_id=608574363]
+position = Vector2(1690, 700)
+
+[node name="Bandera" type="Polygon2D" parent="PuntoObjetivo" unique_id=2035466118]
+color = Color(0.92, 0.83, 0.4, 1)
+polygon = PackedVector2Array(0, 0, 0, 75, 8, 75, 8, 5, 58, 18, 8, 34)
+
+[node name="ZonaEvacuacion" type="Area2D" parent="."]
+position = Vector2(1730, 700)
+collision_layer = 0
+collision_mask = 1
+monitoring = true
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaEvacuacion"]
+shape = SubResource("RectangleShape2D_zona_evac")
+
+[node name="Jugador" parent="." unique_id=1328884613 instance=ExtResource("3_yx6ie")]
+position = Vector2(360, 720)
+
+[node name="Enemigo" parent="." unique_id=736991272 instance=ExtResource("4_tanque_ia")]
+position = Vector2(1300, 720)
+
+[node name="HUD" parent="." unique_id=344542663 instance=ExtResource("5_hud")]
+
+[node name="Camara" type="Camera2D" parent="." unique_id=534961300]
+position = Vector2(830, 502.326)
+zoom = Vector2(1.08, 1.08)
+limit_left = 0
+limit_top = 0
+limit_right = 1800
+limit_bottom = 1005
+
+[node name="ControladorCombate" type="Node" parent="." unique_id=315659920]
+script = ExtResource("6_controlador")
+
+[node name="GestorProyectilesJugador" type="Node" parent="ControladorCombate" unique_id=1245997143]
+script = ExtResource("7_gestor")
+
+[node name="GestorProyectilesIA" type="Node" parent="ControladorCombate" unique_id=2007558589]
+script = ExtResource("7_gestor")

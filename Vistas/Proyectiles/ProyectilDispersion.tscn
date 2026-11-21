@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://Scripts/Proyectiles/Proyectil.gd" id="1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D"]
+radius = 9.0
+
+[node name="ProyectilDispersion" type="Area2D"]
+collision_layer = 0
+collision_mask = 1
+monitoring = true
+script = ExtResource("1")
+dano_base = 20.0
+radio_explosion = 110.0
+cantidad_fragmentos = 5
+demora_division = 0.45
+tipo_visual = "dispersion"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D")
+
+[node name="Visual" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-9, -5, 3, -5, 9, 0, 3, 5, -9, 5)
+color = Color(0.89, 0.82, 0.45, 1)

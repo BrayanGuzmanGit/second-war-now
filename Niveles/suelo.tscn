@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cqpsn2scylvk6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsy18"]
+size = Vector2(1800, 64)
+
+[node name="Suelo" type="StaticBody2D" unique_id=491134464]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=57904079]
+shape = SubResource("RectangleShape2D_tsy18")
+disabled = true

@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://w5pjvblx8b2l"]
+
+[ext_resource type="Script" path="res://Scripts/Tanques/TanqueJugador.gd" id="1_sa1r2"]
+[ext_resource type="Script" path="res://Scripts/Tanques/VisualTanque.gd" id="2_visual"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddn70"]
+# Tamaño de los píxeles visibles del Sherman (498x286), ajustado al Sprite2D con escala 0.5.
+size = Vector2(249, 143)
+
+[node name="Jugador" type="CharacterBody2D" unique_id=1328884613]
+script = ExtResource("1_sa1r2")
+
+[node name="Visuales" type="Node2D" parent="." unique_id=1621100798]
+script = ExtResource("2_visual")
+
+[node name="Sprite2D" type="Sprite2D" parent="Visuales"]
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=334778770]
+position = Vector2(-30, -19.5)
+shape = SubResource("RectangleShape2D_ddn70")
+
+[node name="PivoteCanon" type="Node2D" parent="Visuales"]
+z_index = 1
+
+[node name="Canon" type="Sprite2D" parent="Visuales/PivoteCanon"]
+
+[node name="PuntoDisparo" type="Marker2D" parent="Visuales/PivoteCanon"]
+
+[node name="LineaTrayectoria" type="Line2D" parent="."]
+z_index = 2
+width = 2.0
+default_color = Color(1, 0.93, 0.54, 0.85)
